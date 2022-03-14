@@ -55,7 +55,7 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::authenticateUsing(function (Request $request) {
             $user = User::where('email', $request->email)->first();
     
-            if ($user && ($user->isSuperAdmin) &&
+            if ($user && ($user->isSuperAdmin || $user->isOperator) &&
                 Hash::check($request->password, $user->password)) {
                 return $user;
             }

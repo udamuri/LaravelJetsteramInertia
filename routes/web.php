@@ -5,6 +5,7 @@ use Inertia\Inertia;
 
 use App\Http\Controllers\Jetstream\User\AdminController;
 use App\Http\Controllers\Jetstream\Village\VillageController;
+use App\Http\Controllers\Jetstream\Patient\PatientController;
 use App\Http\Controllers\Jetstream\Dashboard\DashboardController;
 
 /*
@@ -32,6 +33,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'is-operator', 'verified'])->group(function () {
 
 	Route::get('dashboard', DashboardController::class)->name('dashboard');
+	Route::resource('patients', PatientController::class);
 	
 });
 

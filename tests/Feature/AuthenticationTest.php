@@ -23,7 +23,7 @@ class AuthenticationTest extends TestCase
     {
         $user = User::factory()
                 ->state(new Sequence(
-                    fn ($sequence) => ['role' => 'admin'],
+                    fn ($sequence) => ['role' => 'operator'],
                 ))
                 ->create();
 

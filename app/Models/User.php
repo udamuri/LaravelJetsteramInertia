@@ -68,7 +68,6 @@ class User extends Authenticatable
         'profile_photo_url',
         'formattedCreatedAt',
         'formattedUpdatedAt',
-        'permissions',
         'isOperator',
         'photoProfile',
         'isSuperAdmin',
@@ -99,15 +98,6 @@ class User extends Authenticatable
         return false;
     }
 		
-	public function getIsBankSampahAttribute($value)
-    {
-        $permission = ['bank'];
-        if(in_array($this->role, $permission)) {
-            return true;
-        }
-
-        return false;
-    }
 
     public function getPhotoProfileAttribute($value)
     {
@@ -128,22 +118,7 @@ class User extends Authenticatable
         return Carbon::parse($this->updated_at)->format('d M Y H:i:s');
     }
 
-    public function getPermissionsAttribute()
-    {
-        $arrPermission = [
-            'admins' => [
-                'view' => $this->cannot('index', User::class),
-            ],
-        ];
-
-        if($this->role === 'super-admin') {
-            $arrPermission['admins'] = [
-                'view' => $this->can('index', User::class),
-            ];
-        }
-
-        return $arrPermission;
-    }
+    
 
 	public function scopeWhereUserId($query, $user_id)
     {

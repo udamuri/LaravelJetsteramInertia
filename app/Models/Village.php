@@ -33,6 +33,11 @@ class Village extends Model
         'formattedUpdatedAt',
     ];
 
+	public function patient()
+    {
+        return $this->belongsTo(Patient::class, 'id', 'village_id');
+    }
+
     public function getFormattedCreatedAtAttribute($value)
     {
         return Carbon::parse($this->created_at)->format('d M Y H:i:s');
@@ -46,7 +51,9 @@ class Village extends Model
     public function scopeWhereSearch($query, $search)
     {
         foreach (explode(' ', $search) as $term) {
-            $query->where('services.plans.name', 'LIKE', '%'.$term.'%');
+			$query->where('villages.kelurahan', 'LIKE', '%'.$term.'%')
+				->orWhere('villages.kecamatan', 'LIKE', '%'.$term.'%')
+				->orWhere('villages.kota', 'LIKE', '%'.$term.'%');
         }
     }
     

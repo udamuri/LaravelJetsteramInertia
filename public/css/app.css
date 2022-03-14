@@ -2348,6 +2348,13 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(31, 41, 55, var(--tw-text-opacity));
 }
+.disabled\:cursor-not-allowed:disabled {
+	cursor: not-allowed;
+}
+.disabled\:bg-gray-300:disabled {
+	--tw-bg-opacity: 1;
+	background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
+}
 .disabled\:opacity-25:disabled {
 	opacity: 0.25;
 }

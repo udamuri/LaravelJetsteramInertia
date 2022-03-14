@@ -81,7 +81,7 @@
         data() {
             return {
                 itemId :  this.admin.id,
-                role: [{name: '==Select==', value: ''}, {name: 'Admin', value: 'admin'}, {name: 'Super Admin', value: 'super-admin'}],
+                role: [{name: '==Select==', value: ''}, {name: 'Operator', value: 'operator'}, {name: 'Admin', value: 'super-admin'}],
                 form: this.$inertia.form({
                     _method: "PUT",
                     name: this.admin.name,

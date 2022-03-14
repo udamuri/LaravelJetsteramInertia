@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
 		
         //Bypass Policy
         // Gate::before(function (User $user) {
-        //     if ($user->hasRole('admin') || $user->hasRole('super-admin')) {
+        //     if ($user->hasRole('operator') || $user->hasRole('super-admin')) {
         //         return true;
         //     }
         // });

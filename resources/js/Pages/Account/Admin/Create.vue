@@ -82,13 +82,13 @@
         },
         data() {
             return {
-                role: [{name: '==Select==', value: ''}, {name: 'Admin', value: 'admin'}, {name: 'Super Admin', value: 'super-admin'}],
+                role: [{name: '==Select==', value: ''}, {name: 'Operator', value: 'operator'}, {name: 'Admin', value: 'super-admin'}],
                 form: this.$inertia.form({
                     _method: "POST",
                     name: null,
                     email: null,
                     password: null,
-                    role: 'admin',
+                    role: 'operator',
                 })
             }
         },

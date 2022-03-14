@@ -17,6 +17,13 @@
   GET|HEAD        login ......................................................................................................................... login › Laravel\Fortify › AuthenticatedSessionController@create
   POST            login .................................................................................................................................. Laravel\Fortify › AuthenticatedSessionController@store
   POST            logout ...................................................................................................................... logout › Laravel\Fortify › AuthenticatedSessionController@destroy
+  GET|HEAD        patients ........................................................................................................................... patients.index › Jetstream\Patient\PatientController@index
+  POST            patients ........................................................................................................................... patients.store › Jetstream\Patient\PatientController@store
+  GET|HEAD        patients/create .................................................................................................................. patients.create › Jetstream\Patient\PatientController@create
+  GET|HEAD        patients/{patient} ................................................................................................................... patients.show › Jetstream\Patient\PatientController@show
+  PUT|PATCH       patients/{patient} ............................................................................................................... patients.update › Jetstream\Patient\PatientController@update
+  DELETE          patients/{patient} ............................................................................................................. patients.destroy › Jetstream\Patient\PatientController@destroy
+  GET|HEAD        patients/{patient}/edit .............................................................................................................. patients.edit › Jetstream\Patient\PatientController@edit
   POST            reset-password ................................................................................................................ password.update › Laravel\Fortify › NewPasswordController@store
   GET|HEAD        reset-password/{token} ........................................................................................................ password.reset › Laravel\Fortify › NewPasswordController@create
   GET|HEAD        sanctum/csrf-cookie ............................................................................................................................... Laravel\Sanctum › CsrfCookieController@show

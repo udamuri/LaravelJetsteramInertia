@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
                 'role' => "super-admin"
             ],
             [
-                'name' => 'Admin',
+                'name' => 'Operator',
                 'email' => 'operator@gmail.com',
                 'password' => Hash::make("12345678"),
                 'role' => "operator"

@@ -10,7 +10,7 @@
           <div class="mb-4">
             <p class="pl-4 text-sm font-semibold mb-1">Utama</p>
 
-            <nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+            <nav-link :href="route('dashboard')" :active="route().current('dashboard')" v-if="$page.props.user.isOperator" >
               <svg class="h-6 w-6 fill-current mr-2" viewBox="0 0 20 20">
                 <path d="M18.121,9.88l-7.832-7.836c-0.155-0.158-0.428-0.155-0.584,0L1.842,9.913c-0.262,0.263-0.073,0.705,0.292,0.705h2.069v7.042c0,0.227,0.187,0.414,0.414,0.414h3.725c0.228,0,0.414-0.188,0.414-0.414v-3.313h2.483v3.313c0,0.227,0.187,0.414,0.413,0.414h3.726c0.229,0,0.414-0.188,0.414-0.414v-7.042h2.068h0.004C18.331,10.617,18.389,10.146,18.121,9.88 M14.963,17.245h-2.896v-3.313c0-0.229-0.186-0.415-0.414-0.415H8.342c-0.228,0-0.414,0.187-0.414,0.415v3.313H5.032v-6.628h9.931V17.245z M3.133,9.79l6.864-6.868l6.867,6.868H3.133z"></path>
               </svg>
@@ -21,9 +21,14 @@
           <div class="mb-4">
             <p class="pl-4 text-sm font-semibold mb-1">Data</p>
 
-			<nav-link :href="route('villages.index')" :active="route().current('villages.index')">
+			<nav-link :href="route('villages.index')" :active="route().current('villages.index')" v-if="$page.props.user.isSuperAdmin">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-6 w-6 fill-current mr-2"><path d="M12 18.62l-6.55 3.27A1 1 0 0 1 4 21V4c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v17a1 1 0 0 1-1.45.9L12 18.61zM18 4H6v15.38l5.55-2.77a1 1 0 0 1 .9 0L18 19.38V4z" class="heroicon-ui"></path></svg>
 				<span class="text-gray-700">Kelurahan</span>
+			</nav-link>
+
+			<nav-link :href="route('patients.index')" :active="route().current('patients.index')" v-if="$page.props.user.isOperator">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-6 w-6 fill-current mr-2"><path d="M12 18.62l-6.55 3.27A1 1 0 0 1 4 21V4c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v17a1 1 0 0 1-1.45.9L12 18.61zM18 4H6v15.38l5.55-2.77a1 1 0 0 1 .9 0L18 19.38V4z" class="heroicon-ui"></path></svg>
+				<span class="text-gray-700">Pasien</span>
 			</nav-link>
 
           </div>

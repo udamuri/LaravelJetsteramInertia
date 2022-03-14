@@ -40,7 +40,7 @@ class AdminRequest extends FormRequest
             ],
             'role' => [
                 'required',
-                'in:admin,super-admin',
+                'in:operator,super-admin',
             ],
         ];
 

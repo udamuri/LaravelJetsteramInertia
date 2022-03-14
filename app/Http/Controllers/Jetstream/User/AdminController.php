@@ -23,7 +23,7 @@ class AdminController extends Controller
         $queries = ['search', 'page'];
         return Inertia::render('Account/Admin/Index', [
             'admins' => User::applyFilters($request->only($queries))
-                ->whereRoleIn(['admin', 'super-admin'])
+                ->whereRoleIn(['operator', 'super-admin'])
                 ->paginateData($limit),
             'filtersAdmins' => $request->all($queries),
             'start' => $limit * ($page - 1),
