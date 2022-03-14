@@ -44,3 +44,12 @@
     webserver		: Nginx
 	
 ```
+
+# Node
+####node Version
+#node -> stable (-> v16.14.0)
+
+```php
+#npm install && npm run dev  
+
+```
